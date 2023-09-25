@@ -10,6 +10,8 @@ import Login from './components/DangNhap';
 import Fat_list from './components/Fat_list';
 import DoiNam from './components/DoiNam';
 import Selection_list from './components/Selection_list';
+import Modal from './components/Modal';
+
 import NavigationMenu from './components/NavigationMenu';
 
 const Stack = createNativeStackNavigator();
@@ -26,6 +28,7 @@ function App() {
               <Stack.Screen name="DoiNam" component={DoiNam} options={{ title: 'Đổi năm Âm Lịch' }} />
               <Stack.Screen name="Fat_list" component={Fat_list} />    
               <Stack.Screen name="Selection_list" component={Selection_list} options={{ title: 'Hoa theo chủ đề' }} />              
+              <Stack.Screen name="Modal" component={Modal} options={{ title: 'Modal' }} />              
 
         </Stack.Navigator>
       }

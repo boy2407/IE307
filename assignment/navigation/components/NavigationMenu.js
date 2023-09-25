@@ -38,8 +38,10 @@ const NavigationMenu = ({ navigation }) => {
         <Text style={styles.title}>Buổi 3</Text>
         <View style={styles.button}>
           <Button title="Selection_list" onPress={() => navigateToScreen('Selection_list')} />
+        </View>    
+        <View style={styles.button}>
+          <Button title="Modal" onPress={() => navigateToScreen('Modal')} />
         </View>
-      
       </View>
 
     </View>
