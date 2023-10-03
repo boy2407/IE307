@@ -11,7 +11,7 @@ const NavigationMenu = ({ navigation }) => {
   return (
     <View style={styles.container}>
 
-      {/* buổi 1 */}
+     
       <View style={styles.group}>
         <Text style={styles.title}>Buổi 1</Text>
         <View style={styles.button}>
@@ -22,7 +22,7 @@ const NavigationMenu = ({ navigation }) => {
         </View>
       </View>
 
-      {/* buổi 2 */}
+    
       <View style={styles.group}>
         <Text style={styles.title}>Buổi 2</Text>
         <View style={styles.button}>
@@ -33,16 +33,22 @@ const NavigationMenu = ({ navigation }) => {
         </View>
       </View>
 
-     {/* buổi 3 */}
-     <View style={styles.group}>
-        <Text style={styles.title}>Buổi 3</Text>
-        <View style={styles.button}>
-          <Button title="Selection_list" onPress={() => navigateToScreen('Selection_list')} />
-        </View>    
-        <View style={styles.button}>
-          <Button title="Modal" onPress={() => navigateToScreen('Modal')} />
+      <View style={styles.group}>
+          <Text style={styles.title}>Buổi 3</Text>
+          <View style={styles.button}>
+            <Button title="Selection_list" onPress={() => navigateToScreen('Selection_list')} />
+          </View>    
+          <View style={styles.button}>
+            <Button title="Modal" onPress={() => navigateToScreen('Modal')} />
+          </View>
+      </View> 
+      
+      <View style={styles.group}>
+          <Text style={styles.title}>Buổi 5</Text>
+          <View style={styles.button}>
+            <Button title="Buoi5" onPress={() => navigateToScreen('Buoi5')} />
+          </View>    
         </View>
-      </View>
 
     </View>
   );
@@ -53,6 +59,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     paddingHorizontal: 10
+  },
+  title:{
+    fontSize:24,
+    color:'red'
   },
   button: {
     marginTop: 20,

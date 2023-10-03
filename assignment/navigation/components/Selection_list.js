@@ -211,7 +211,7 @@ const DATA = [
       borderRadius:10,
       shadowColor:'#Red',
       shadowRadius:3.84,
-      elevation:5,
+      elevation:90,
     },
     image:{
       height:160,

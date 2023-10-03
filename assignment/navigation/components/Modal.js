@@ -218,6 +218,7 @@ export default function App() {
 
             <SectionList sections={DATA}
                 keyExtractor={(item, index) => item.mahoa.toString()}
+                showsVerticalScrollIndicator={false}
                 renderItem={({ item }) => (
                     <TouchableHighlight  underlayColor="#DDDDDD"
                     activeOpacity={0.8} 

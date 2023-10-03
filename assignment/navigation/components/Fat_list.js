@@ -64,6 +64,7 @@ export default function App() {
    <View style={styles.container}>
       <FlatList
        data={data}
+       showsVerticalScrollIndicator={false}
        renderItem={({item})=>(
           <View>
               <Text style={styles.text}>{item.name}</Text>
@@ -82,15 +83,15 @@ const styles = StyleSheet.create({
     width:120,
     resizeMode:'stretch',
     alignSelf:'center',
-    borderRadius: 15, // Bo góc
-    borderWidth: 1, // Đường viền
-    borderColor: '#ddd', // Màu đường viền
+    borderRadius: 15, 
+    borderWidth: 1, 
+    borderColor: '#ddd', 
 },
 text:{
   textAlign:'center',
-  color:'#800000', // Màu đỏ đậm
+  color:'#800000',
   fontSize:20,
-  // Phông chữ Arial
+  
 },
   container: {
     flex: 1,
