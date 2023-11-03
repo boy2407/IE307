@@ -37,23 +37,24 @@ export default function App() {
     <View style={styles.container}>
      
       <View style={styles.containerFlowerType}>
-      <FlowerType 
-      setTypeFlower = {setTypeFlower}
-      />
-      </View>
-      <View style={styles.containerFlowerList}>
-      <FlowerList 
-      TypeFlower = {TypeFlower}
-      setModalVisible={setModalVisible}
-      setFlowerDetail={setFlowerDetail}
-      />
+        <FlowerType 
+        setTypeFlower = {setTypeFlower}
+        />
       </View>
 
-     <FlowerDetail 
-      flowerDetail={flowerDetail}
-      setModalVisible={setModalVisible}
-      modalVisible={modalVisible}
-      />  
+      <View style={styles.containerFlowerList}>
+        <FlowerList 
+        TypeFlower = {TypeFlower}
+        setModalVisible={setModalVisible}
+        setFlowerDetail={setFlowerDetail}
+        />
+      </View>
+
+      <FlowerDetail 
+        flowerDetail={flowerDetail}
+        setModalVisible={setModalVisible}
+        modalVisible={modalVisible}
+        />  
 
     </View>
 
