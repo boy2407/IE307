@@ -11,9 +11,9 @@ import Fat_list from './screens/Fat_list';
 import DoiNam from './screens/DoiNam';
 import Selection_list from './screens/Selection_list';
 import Modal from './screens/Modal';
-import NavigationMenu from './screens/NavigationMenu';
+import NavigationMenu from './navigation/NavigationMenu';
 import Buoi5 from './screens/buoi5';
-import Buoi5_v2 from './screens/buoi5_v2';
+import Buoi5_v2 from './navigation/buoi5_v2';
 
 const Stack = createNativeStackNavigator();
 
