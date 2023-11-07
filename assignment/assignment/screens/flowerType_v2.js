@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList, Alert, TouchableOpacity, Image, Modal, Pressable } from 'react-native';
 
-export default function FlowerType({navigation}) {
+export default function FlowerType_v2({navigation}) {
   const DATA = [
     {
       "maloai": "1",
@@ -39,7 +39,7 @@ export default function FlowerType({navigation}) {
     );
     const renderItem = ({item})=>{
       const backgroundColor  = item.maloai == flowerType?'#6e3b6e':'#f9c2ff'
-      const color  =item.maloai == flowerType?'white':'#black'
+      const color  =item.maloai == flowerType?'white':'black'
       return (
         <Item
         item={item}

@@ -2,7 +2,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState ,useEffect} from 'react';
 import { StyleSheet, Text, View, FlatList, Alert, TouchableOpacity, Image, Modal, Pressable } from 'react-native';
-export default function App({route,navigation}) {
+export default function FlowerDetail_v2({route,navigation}) {
 
   const {flowerDetail} = route.params
   const [Flower,setFlower] = useState({

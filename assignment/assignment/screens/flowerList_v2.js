@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList, Alert, TouchableOpacity, Image, Modal, Pressable } from 'react-native';
 
-export default function App({route,navigation}) {
+export default function FlowerList_v2({route,navigation}) {
   const{tenloai}=route.params;
   const HOA = [{
     "mahoa": 1,
