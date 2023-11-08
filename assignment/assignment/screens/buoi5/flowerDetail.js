@@ -3,9 +3,6 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList, Alert, TouchableOpacity, Image, Modal, Pressable } from 'react-native';
 
-
-
-
 export default function FlowerDetail(props) {
 
   return (

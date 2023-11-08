@@ -1,11 +1,11 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import Buoi5_v2 from "./buoi5_v2";
+import Buoi5_v2 from "../screens/buoi7/buoi5_v2";
 import Buoi5 from "../screens/buoi5/buoi5";
 import FatList from "../screens/buoi1_3/Fat_list";
 import KetQuaHocTap from "../screens/buoi1_3/KetQuaHocTap";
 import Modal_v1 from "../screens/buoi1_3/Modal";
 import Section_List from "../screens/buoi1_3/Selection_list";
-import DrawerScreen from "./Drawer";
+import DrawerScreen from "../screens/buoi7/Drawer";
 import NavigationMenu from "../screens/NavigationMenu";
 import DangNhap from "../screens/buoi1_3/DangNhap";
 import DoiNam from "../screens/buoi1_3/DoiNam";
@@ -66,7 +66,12 @@ export default function AuthStack(){
                 options={{ title: 'Buoi5'
              }} 
             />                  
- 
+            <Auth.Screen 
+                name="Buoi5_v2" 
+                component={Buoi5_v2} 
+                options={{ title: 'Buoi5_v2'
+             }} 
+            />       
             <Auth.Screen
                 name="DrawerScreen"
                 component={DrawerScreen}

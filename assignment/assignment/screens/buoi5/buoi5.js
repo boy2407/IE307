@@ -2,9 +2,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList, Alert, TouchableOpacity, Image, Modal, Pressable } from 'react-native';
-import FlowerDetail from './flowerDetail'
-import FlowerList from './flowerList'
-import FlowerType from './flowerType'
+import FlowerDetail from './FlowerDetail';
+import FlowerList from './FlowerList'
+import FlowerType from './FlowerType'
 
 export default function Buoi5() {
 
