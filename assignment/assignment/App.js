@@ -7,7 +7,8 @@ import DrawerScreen from './screens/buoi8/Drawer';
 export default function App() {
   return (
     <NavigationContainer>
-       <DrawerScreen/>
+        <DrawerScreen/>
     </NavigationContainer>    
+    
   );
 }

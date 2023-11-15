@@ -2,45 +2,36 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StyleSheet,Image,ImageBackground, Text, TextInput, View, Button, Alert, Switch } from 'react-native';
 import React, { useState } from 'react';
+import * as SQLite from 'expo-sqlite'
+var db = SQLite.openDatabase('qlbh.db')
 
 
 export default function Login() {
-  const [username, setUserName] = useState('');
-  const [pass, setPass] = useState('');
-  const [Sex, setSex] = useState();
-    
-  const saveValueFunction = () => {
-    if(username){
-        AsyncStorage.setItem('username',username,)
-        AsyncStorage.setItem('pass',pass,)
-        setUserName('')
-        setPass('')
-        alert('Data Saved')
-    }
-    else{
-        alert('Please fill data')
-    }
-  }
-    const getValueFunction = () => {
-
-        try {
-            AsyncStorage.getItem('username').then(value=>
-            setUserName(value),
-            )
-            AsyncStorage.getItem('setPass').then(value=>
-                setPass(value),
-                )
-          } 
-          catch (error) {
-            alert('')
+  const [username,setUserName] = useState('')
+  const [password,setPassWord] = useState('')
+  const [user,getusser]=useState({'username':0,'password':"","email_adderss":"",})
+  const login = ()=>{
+    db.transaction((tx)=>{
+      tx.executeSql(
+        'SELECT * FROM table_user WHERE username = ? and password =?',
+        [username,password],
+        (tx,results)=>{
+          if(results.rows.length>0){
+            AsyncStorage.getItem('user',JSON.stringify(results.rows.item(0)));
+            getusser(results.rows.item(0));
           }
-    }
+          else alert('Welcome')
+        }
+      )
 
-  const xuly = () => {
-    Alert.alert('Thông báo',
-    'Xin chào ' + username + '\nMật khẩu ' + pass+ '\nGiới Tính:'+ (Sex ? 'Nam':'Nữ'));
-  };
-
+    })
+   
+  }
+  const Getuser =()=>{
+      AsyncStorage.getItem('user').then(
+        (value)=>getusser(JSON.parse(value)),
+      )
+  }
   return (
     <View style={styles.container}>
       <ImageBackground />
@@ -57,35 +48,20 @@ export default function Login() {
       <View style={styles.inputContainer}>
         <Text style={styles.label} >Mật khẩu</Text>
         <TextInput style={styles.input}     
-          secureTextEntry={true} value={pass}
+          secureTextEntry={true} value={password}
           multiline={false}
-          onChangeText={setPass} placeholder="Mật khẩu" />
-      </View>
-
-      <View style={styles.inputContainer}>
-        <Text style={styles.label} >Giới tính</Text>
-        <Switch
-        trackColor={{false: '#767577', true: '#81b0ff'}}
-        thumbColor={Sex ? '#f5dd4b' : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={setSex}
-        value={Sex}
-      />
+          onChangeText={setPassWord} placeholder="Mật khẩu" />
       </View>
 
 
       <View style={styles.buttonContainer}>
         <Button title='Đăng nhập'
           onPress={() => {
-            saveValueFunction();
-            getValueFunction();
+            login()
             }} />
       </View>
 
-      <View style={styles.buttonContainer}>
-      <Text style={styles.label} >{username!=''?"Chào bạn: "+username:""}</Text>
-         <Image style={styles.image}source ={Sex==true?require('../../assets/images/man.png'):require('../../assets/images/woman.png')} />
-      </View>   
+
     </View>
   );
 }
